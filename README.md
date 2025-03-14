@@ -2,7 +2,7 @@
 Projecting current college player NBA careers through distance to former prospect cluster centroids. 
 
 1. Data Access
-<\t> a. College Player Data
+1. a. College Player Data
 
   
 •	CBB Player data: https://barttorvik.com/
