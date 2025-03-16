@@ -6,7 +6,7 @@
 - team: (string) Team abbreviation or name.
 - conf: (string) Conference the team belongs to (e.g., ACC, Big Ten).
 - yr: (string) Player's year in college (e.g., Freshman, Sophomore, Junior, Senior).
-- ht: (string) Player's height (e.g., "6'5") . (not sure what this is)
+- ht: (float) Player's height in cm.
 - num: (integer) Player's jersey number.
 - pid: (integer) Unique player ID.
 - type: (string) Player classification (e.g., guard, forward, center).
