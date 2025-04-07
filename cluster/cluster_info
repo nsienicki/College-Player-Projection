@@ -1,0 +1,2 @@
+1. college_class.py has the ability to cluster on the whole NCAA dataset, but for our uses the only_NBA indicator should be set to True to cluster on college players hwo made it to the NBA.
+2. It produces two outputs, cluster_stats.csv (lays out each cluster's highest concentration of position classification) and player_cluster.csv (assigns each player a cluster)  
