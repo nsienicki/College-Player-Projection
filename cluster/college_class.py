@@ -111,13 +111,17 @@ def run_k_selection_and_record_scores(datasets, k_range=(2, 11)):
 # list of datasets to compare
 datasets = {
     'pfa_players_df': StandardScaler().fit_transform(pfa_players_df),
-    'hand_players_df': StandardScaler().fit_transform(hand_players_df),
+    #'hand_players_df': StandardScaler().fit_transform(hand_players_df),
     'players_df_model': StandardScaler().fit_transform(players_df_model),
 }
 
 # execute
-k_range = (2, 15)
+k_range = (3, 15)
 results_df = run_k_selection_and_record_scores(datasets, k_range=k_range)
+best_CH_row = best_row = results_df.loc[results_df["CH Index"].idxmax()]
+best_dataset = best_row["Dataset"]
+best_dataset_obj = datasets[best_dataset]
+best_k = best_row["K"]
 results_df.to_csv('eval_scores.csv', index=False)
 plt.close()
 
@@ -125,23 +129,19 @@ plt.close()
 # Final KMeans Implementation ######
 ####################################
 
-# standardize data
-scaler = StandardScaler()
-scaler_players_df = scaler.fit_transform(pfa_players_df)
-
 # run KMeans
-kmeans_model_23_24 = KMeans(random_state=1, n_init='auto', n_clusters=3)
-kmeans_model_23_24.fit(scaler_players_df)
+kmeans_model_23_24 = KMeans(random_state=1, n_init='auto', n_clusters=best_k)
+kmeans_model_23_24.fit(best_dataset_obj)
 
 # predict
-players_df_edited['cluster'] = kmeans_model_23_24.predict(scaler_players_df)
+players_df_edited['cluster'] = kmeans_model_23_24.predict(best_dataset_obj)
 players_df_edited.to_csv('player_cluster.csv', index=False)
 
 ####################################
 ########### PCA and graph ##########
 ####################################
 pca = PCA(n_components=2)
-pca = pca.fit_transform(scaler_players_df)
+pca = pca.fit_transform(best_dataset_obj)
 
 pca_df = pd.DataFrame(pca, columns=['PC1', 'PC2'])
 
