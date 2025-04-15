@@ -14,7 +14,16 @@ Projecting current college player NBA careers through distance to former prospec
 ## Entity Resolution
 
 ## Data Cleaning
-
+### College Player Data Cleaning
+- Input: college player data from 2010 - 2025
+- Notebook: data_processing.ipynb
+- Output: player_data_college.csv
+- Process:
+    - Concatenation: Combine player data from 2010 to 2025 into a single dataset.
+    - Slicing: Merge player data across multiple years using a unique combination of player and team names, ensuring one row per player.
+    - Cleaning: Remove incomplete records with minimal data for any given year.
+    - Aggregation: Calculate the weighted average of key performance metrics.
+  
 ## Clustering
 Inputs: nba_ncaa_map.csv, player_data_college_2010-2025.csv
 Code: college_class.py
