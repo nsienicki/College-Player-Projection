@@ -9,7 +9,11 @@ Projecting current college player NBA careers through distance to former prospec
 4. trank_processing.py takes the unlabeled csv files and adds the headers. There are two new columns that are not included in the header summary
 5. One is a postitional classification (named "pos_class" in trank_processing.py), while the other is unknown, and has been dropped
 
-### NBA Player Data: XXXXXXX
+### NBA Player Data: 
+1. NBA Game Histroical Box Score data and corresponding Player Identification helper data can be found at this link on Kaggle: https://www.kaggle.com/datasets/eoinamoore/historical-nba-data-and-player-box-scores
+2. Download PlayerStatistics.csv and Players.csv and place them in the data folder
+3. Once the data is in the proper location, open and run the nba_players_season_avgs.ipynb Jupyter Notebook
+4. This notebook will create three csv files: player_avgs_2008-2025.csv, player_best_games.csv, and player_best_seasons.csv
 
 ## Entity Resolution
 
