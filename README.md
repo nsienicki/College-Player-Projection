@@ -13,10 +13,7 @@ Projecting current college player NBA careers through distance to former prospec
 1. NBA Game Histroical Box Score data and corresponding Player Identification helper data can be found at this link on Kaggle: https://www.kaggle.com/datasets/eoinamoore/historical-nba-data-and-player-box-scores
 2. Download PlayerStatistics.csv and Players.csv and place them in the data folder
 3. Once the data is in the proper location, open and run the nba_players_season_avgs.ipynb Jupyter Notebook
-4. This notebook will create three csv files: player_avgs_2008-2025.csv, player_best_games.csv, and player_best_seasons.csv
-
-## Entity Resolution
-
+4. This notebook will create three csv files: player_avgs_2008-2025.csv, player_best_games.csv, and player_best_seasons.csv 
 
 ## Data Cleaning
 ### College Player Data Cleaning
@@ -28,6 +25,23 @@ Projecting current college player NBA careers through distance to former prospec
     - Slicing: Merge player data across multiple years using a unique combination of player and team names, ensuring one row per player.
     - Cleaning: Remove incomplete records with minimal data for any given year.
     - Aggregation: Calculate the weighted average of key performance metrics.
+ 
+## Entity Resolution
+### Overview
+Code (notebook): ./entity-resolution/nba_ncaa_entity_res.ipynb
+
+Inputs: nba_player_avgs_2008-2025.csv, trank_data_2024.csv, player_data_college.csv
+
+Outputs: nba_ncaa_matches.csv, player_similarity_results.csv
+
+### Steps to Run Code
+1. Take the output of the NBA player data crawling and cleansing notebook (./CODE/nba_players_season_avgs.ipynb) and place it in the entity-resolution directory. Rename the file to nba_player_avgs_2008-2025.csv
+2. Download the 2024 file from the college player dataset and place it in the entity-resolution directory with the file name as trank_data_2024.csv
+3. Run the data cleaning notebook (./data/data_processing.ipynb) and put the output in the entity-resolution directory with file name player_data_college.csv
+4. Run all the cells in the ./entity-resolution/nba_ncaa_entity_res.ipynb notebook to get the outputs
+5. The nba_ncaa_entity_res.ipynb notebook will produce two outputs
+   - nba_ncaa_matches.csv: The NCAA to NBA player matches
+   - player_similarity_results.csv: A map that has NCAA player pairs that are similar to one another based on euclidean distance calculaions between a subset of season statistics
   
 ## Clustering
 Inputs: nba_ncaa_map.csv, player_data_college_2010-2025.csv
