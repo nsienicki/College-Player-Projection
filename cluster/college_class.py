@@ -15,7 +15,7 @@ from collections import defaultdict
 ###################################
 
 # read in data
-players_df_edited = pd.read_csv('data/player_data_college_2010-2025.csv')
+players_df_edited = pd.read_csv('data/player_data_college.csv')
 
 
 
