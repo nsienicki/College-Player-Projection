@@ -1,6 +1,16 @@
 # College-Player-Projection
 Projecting current college player NBA careers through distance to former prospect cluster centroids. 
 
+# DESCRIPTION
+This package is designed to analyze and visualize the transition of college basketball players to the NBA, focusing on statistical performance, entity resolution, and player clustering. It begins with the collection and organization of data from two primary sources: Bart Torvik’s college basketball statistics and a Kaggle dataset containing NBA player game stats. College data is retrieved year by year starting from 2010, formatted with standardized headers, and slightly extended with positional classification. NBA data includes game-by-game statistics and player information, which are processed into three key outputs summarizing player season averages, top games, and standout seasons.
+
+The next phase is data cleaning, where the college player data from 2010–2025 is merged into a comprehensive dataset. Duplicate and incomplete entries are removed, and key metrics are aggregated using weighted averages. A player matching system is then used to connect college players with their professional counterparts. This involves normalization of university names, blocking by tokens, and fuzzy name matching to pair similar players between datasets.
+
+In the entity resolution stage, cleaned and processed college and NBA datasets are used to identify NCAA-NBA player matches. The output includes a direct mapping of matched players and a similarity score matrix that highlights players with statistically similar college careers. This resolution sets the foundation for the clustering module, which groups players who specifically made it to the NBA—based on their statistical profiles. Clusters are optimized using the Calinski-Harabasz index to determine natural groupings based on performance and position.
+
+Finally, the package includes a Streamlit-based visualization dashboard, which allows users to interactively explore the data. It supports player stat displays, manual stat adjustments, trend visualizations, similarity comparisons to NBA players, and player-type clustering information. This enables both quantitative analysis and intuitive insight into how college performance might translate to professional potential.
+
+# INSTALLATION
 ## 1. Data Access <br>
 ### 1.1 College Player Data: https://barttorvik.com/.
 1. Player csv stats from 2010 on can be downloaded by year by adding requested year to “year=XXXX” string on to the url above: getadvstats.php?year=2010&csv=1
@@ -68,6 +78,13 @@ Projecting current college player NBA careers through distance to former prospec
    - NBA Comparisons: Displays the most similar NBA player.
    - Player Type Projection: Classifies player and shows cluster placement.
 
-
-    
+# EXECUTION
+1. Link: https://visdashcse6242py-ygacmznbsumuhzrrhpdi3j.streamlit.app/
+2. Features:
+   - Player Selector: Dropdown menu to choose a player.
+   - Player Stats Display: Auto-filled stats including Points, Assists, Rebounds, and Blocks.
+   - Stat Adjustment Sliders: Manually tweak player stats using sliders.
+   - Performance Projection: Visualizes year-over-year stat trends.
+   - NBA Comparisons: Displays the most similar NBA player.
+   - Player Type Projection: Classifies player and shows cluster placement.    
 
