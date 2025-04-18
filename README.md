@@ -68,27 +68,34 @@ Finally, the package includes a Streamlit-based visualization dashboard, which a
    -  The code produces three outputs, cluster_stats.csv (lays out each cluster's highest concentration of position classification), eval_scores.csv (showing each dataset's CH Index performance) and player_cluster.csv (assigns each player a cluster) 
 
 ## 5. Visualization
-1. Tool: streamlit dashboard
-2. Link: https://visdashcse6242py-ygacmznbsumuhzrrhpdi3j.streamlit.app/
-3. Input: basketball.png (downloaded pic of a basketball), cluster_stats.csv, nba_ncaa_map.csv, player_cluster.csv, nba_player_avgs_2008-2025.csv
-4. Features:
+1. Inputs/Outputs: player_data_college_latest_season.csv (input); nba_player_avgs_2008-2025.csv (input); nba_ncaa_map.csv (input); basketball.png (input); espn_ncaa_player_ids.csv (code-generated); cluster_stats.csv (code-generated); player_cluster.csv (code-generated)
+2. Code: vis_dash_cse6242.py; ncaa_img_scrape.py
+3. Tool: Streamlit, Python, Github
+4. Implementation:
+    - Utilized Streamlit Package in Python to develop the dashboard design on a local host
+    - The base dashboard file is vis_dash_cse6242.py which utilizes the inputs and integrates the clustering methodology defined above
+    - NCAA image id's were scraped using ncaa_img_scrape.py which outputted espn_ncaa_player_ids.csv
+    - Top Comparisons were generated using kNN-Euclidean distance based off of Points, Assists, Rebounds, Blocks, Steals, Height, FT%, FG%, 3PT%, Turnovers, and Defensive Rating features
+    - Projections were made utilizing the nba comparison stats in their first (1-5) years in the NBA
+    - Player Type Archetype was predicted based on the PCA model that was trained (described under the clustering section)
+    - All Relevant files (including requirements.txt, which lists the python packages that were used) were uploaded to a github repository and deployed to the streamlit app (also included in the visualization folder under the main branch)
+6. Dashboard Link: https://visdashcse6242py-ygacmznbsumuhzrrhpdi3j.streamlit.app/
+7. Features:
    - Player Selector: Dropdown menu to choose a player.
-   - Player Stats Display: Auto-filled stats including Points, Assists, Rebounds, and Blocks.
+   - Player Stats Display: Auto-filled stats including Points, Assists, Rebounds, Blocks, and Steals.
    - Stat Adjustment Sliders: Manually tweak player stats using sliders.
    - Performance Projection: Visualizes year-over-year stat trends.
    - NBA Comparisons: Displays the most similar NBA player.
    - Player Type Projection: Classifies player and shows cluster placement.
-5. Process:
-   - Run ncaa_img_scrape.py
-   - Run vis_dash_cse6242.py
+   - All Visuals are Dyanamic to the interactive input from the sliders and can also be reset using the reset button or by selecting a new draft prospect.
 
 # EXECUTION
-1. Link: https://visdashcse6242py-ygacmznbsumuhzrrhpdi3j.streamlit.app/
+1. Dashboard Link: https://visdashcse6242py-ygacmznbsumuhzrrhpdi3j.streamlit.app/
 2. Features:
    - Player Selector: Dropdown menu to choose a player.
-   - Player Stats Display: Auto-filled stats including Points, Assists, Rebounds, and Blocks.
+   - Player Stats Display: Auto-filled stats including Points, Assists, Rebounds, Blocks, and Steals.
    - Stat Adjustment Sliders: Manually tweak player stats using sliders.
    - Performance Projection: Visualizes year-over-year stat trends.
    - NBA Comparisons: Displays the most similar NBA player.
-   - Player Type Projection: Classifies player and shows cluster placement.    
+   - Player Type Projection: Classifies player and shows cluster placement.  
 
