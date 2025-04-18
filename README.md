@@ -59,7 +59,7 @@ Finally, the package includes a Streamlit-based visualization dashboard, which a
    - player_similarity_results.csv: A map that has NCAA player pairs that are similar to one another based on euclidean distance calculaions between a subset of season statistics
   
 ## 4. Clustering
-1. Inputs: nba_ncaa_map.csv, player_data_college_2010-2025.csv
+1. Inputs: nba_ncaa_map.csv, player_data_college.csv
 2. Code: college_class.py
 3. Process
    - Taking player_data_college_2010-2025.csv, we run college_class.py. For our uses the only_NBA indicator should be set to True to cluster on college players who made it to the NBA.
@@ -70,13 +70,17 @@ Finally, the package includes a Streamlit-based visualization dashboard, which a
 ## 5. Visualization
 1. Tool: streamlit dashboard
 2. Link: https://visdashcse6242py-ygacmznbsumuhzrrhpdi3j.streamlit.app/
-3. Features:
+3. Input: basketball.png (downloaded pic of a basketball), cluster_stats.csv, nba_ncaa_map.csv, player_cluster.csv, nba_player_avgs_2008-2025.csv
+4. Features:
    - Player Selector: Dropdown menu to choose a player.
    - Player Stats Display: Auto-filled stats including Points, Assists, Rebounds, and Blocks.
    - Stat Adjustment Sliders: Manually tweak player stats using sliders.
    - Performance Projection: Visualizes year-over-year stat trends.
    - NBA Comparisons: Displays the most similar NBA player.
    - Player Type Projection: Classifies player and shows cluster placement.
+5. Process:
+   - Run ncaa_img_scrape.py
+   - Run vis_dash_cse6242.py
 
 # EXECUTION
 1. Link: https://visdashcse6242py-ygacmznbsumuhzrrhpdi3j.streamlit.app/
