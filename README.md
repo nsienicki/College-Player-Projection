@@ -21,7 +21,7 @@ Finally, the package includes a Streamlit-based visualization dashboard, which a
 
 ### 1.2 NBA Player Data: 
 1. NBA Game Histroical Box Score data and corresponding Player Identification helper data can be found at this link on Kaggle: https://www.kaggle.com/datasets/eoinamoore/historical-nba-data-and-player-box-scores
-2. Download PlayerStatistics.csv and Players.csv and place them in the data folder
+2. Download PlayerStatistics.csv and Players.csv and place them in the data folder within the CODE directory
 3. Once the data is in the proper location, open and run the nba_players_season_avgs.ipynb Jupyter Notebook
 4. This notebook will create three csv files: player_avgs_2008-2025.csv, player_best_games.csv, and player_best_seasons.csv 
 
