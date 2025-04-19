@@ -68,7 +68,7 @@ Finally, the package includes a Streamlit-based visualization dashboard, which a
    -  The code produces three outputs, cluster_stats.csv (lays out each cluster's highest concentration of position classification), eval_scores.csv (showing each dataset's CH Index performance) and player_cluster.csv (assigns each player a cluster) 
 
 ## 5. Visualization
-1. Inputs/Outputs: player_data_college_latest_season.csv (input); nba_player_avgs_2008-2025.csv (input); nba_ncaa_map.csv (input); basketball.png (input); espn_ncaa_player_ids.csv (code-generated); cluster_stats.csv (code-generated); player_cluster.csv (code-generated)
+1. Inputs/Outputs: player_data_college.csv (input); nba_player_avgs_2008-2025.csv (input); nba_ncaa_map.csv (input); basketball.png (input); espn_ncaa_player_ids.csv (code-generated); cluster_stats.csv (code-generated); player_cluster.csv (code-generated)
 2. Code: vis_dash_cse6242.py; ncaa_img_scrape.py
 3. Tool: Streamlit, Python, Github
 4. Implementation:
